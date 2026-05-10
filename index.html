@@ -1,102 +1,381 @@
 <!DOCTYPE HTML>
-<!--
-	Story by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Paul Lea</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html lang="en">
+<head>
+  <title>Paul Lea</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
+    :root {
+      --green: #39ff6e;
+      --green-dim: #1a7a35;
+      --green-dark: #0d3d1a;
+      --amber: #f0c040;
+      --bg: #0a0e0a;
+      --bg2: #0f150f;
+      --bg3: #141c14;
+      --border: #1f3320;
+      --border-bright: #2a5230;
+      --text: #c8e6c9;
+      --text-dim: #5a8a5e;
+      --text-muted: #2e4d32;
+    }
 
-				<!-- One -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-						<div class="content">
-							<h1>Hello! I'm Paul</h1>
-							<p class="major">Physics/Economics Student, Computer Enthusiast, and Outdoors Enjoyer.</p>
-							<ul class="actions stacked">
-								<li><a href="#first" class="button big wide smooth-scroll-middle">About me</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/banner.jpg" alt="" />
-						</div>
-					</section>
+    html { scroll-behavior: smooth; }
 
-				<!-- Two -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
-						<div class="content">
-							<h2>About Me</h2>
-							<p>My name is Paul Lea, and I'm originally from Dallas, TX. I study Physics and Economics. When I'm not studying, I enjoy learning about various topics, backpacking, coffee, and working on my car. </p>
-							<ul class="actions stacked">
-								<li><a href="/pubnotes/" class="button">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight01.jpg" alt="" />
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Education</h2>
-							<p>I study Physics with a concentration in computational physics, and Economics at Rensselear Polytechnic Institute in Upstate NY. Last semester, I studied at University College London in the United Kingdom I enjoy teaching physics concepts at an approachable level, and one of my projects is currently putting together a free collection of notes on different physics courses I've taken. </p>
-							<ul class="actions stacked">
-								<li><a href="/pubnotes/Notes/Physics-Hub" class="button">My Notes</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight02.jpg" alt="" />
-						</div>
-					</section>
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Ubuntu Mono', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
 
-				<!-- Four -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Research</h2>
-							<p>I'm actively searching out research opportunities in higher education, both at home and abroad. I'm interested in a wide variety of physics concepts, especially computational physics, statistical mechanics, and quantum computing. </p>
-							<ul class="actions stacked">
-								<li><a href="paulLeaResume.pdf" class="button">My experience</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight03.jpg" alt="" />
-						</div>
-					</section>
-	
-				<!-- Footer -->
-					<footer class="wrapper style1 align-center">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://www.facebook.com/paulrleaa04" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="https://www.instagram.com/paulrleaa04/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://www.linkedin.com/in/paul-lea-58624a241/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="mailto:paulrleaa04@gmx.us" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<p>&copy; Paul Lea. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-						</div>
-					</footer>
+    /* ── NAV ── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 14, 10, 0.92);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      height: 44px;
+      backdrop-filter: blur(4px);
+    }
 
-			</div>
+    #nav .prompt {
+      color: var(--green);
+      margin-right: 1rem;
+      font-weight: 700;
+      font-size: 13px;
+      white-space: nowrap;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    #nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 0 1rem;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid var(--border);
+      transition: color 0.15s, background 0.15s;
+      letter-spacing: 0.05em;
+    }
+    #nav a:first-of-type { border-left: 1px solid var(--border); }
+    #nav a:hover { color: var(--green); background: var(--bg2); }
 
-	</body>
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 2rem 4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(57,255,110,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .ascii-art {
+      font-size: clamp(7px, 1.2vw, 12px);
+      line-height: 1.2;
+      color: var(--green-dim);
+      white-space: pre;
+      margin-bottom: 2.5rem;
+      overflow-x: auto;
+    }
+
+    .hero-title {
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--green);
+      margin-left: 4px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-subtitle {
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-subtitle .tag { color: var(--amber); }
+
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 20px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--green-dim);
+      color: var(--green);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn:hover { background: var(--green-dark); border-color: var(--green); }
+    .btn.dim { border-color: var(--border-bright); color: var(--text-dim); }
+    .btn.dim:hover { border-color: var(--text-dim); color: var(--text); background: var(--bg3); }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-label::before { content: '> '; color: var(--green-dim); }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    h2::before { content: '# '; color: var(--green-dim); }
+
+    p { color: var(--text); margin-bottom: 1rem; font-size: 13px; }
+
+    /* ── SPOTLIGHT rows ── */
+    .spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 640px) {
+      .spotlight { grid-template-columns: 1fr; }
+    }
+
+    .spotlight .text-col { order: 1; }
+    .spotlight .img-col  { order: 2; }
+    .spotlight.flip .text-col { order: 2; }
+    .spotlight.flip .img-col  { order: 1; }
+
+    .img-col img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--border-bright);
+      transition: filter 0.3s;
+    }
+    .img-col img:hover { filter: grayscale(20%) brightness(0.85); }
+
+    /* ── TERMINAL BOX ── */
+    .term-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+
+    .term-box::before {
+      content: '● ● ●';
+      position: absolute;
+      top: 8px; left: 12px;
+      font-size: 8px;
+      letter-spacing: 4px;
+      color: var(--border-bright);
+    }
+
+    .term-box .body { margin-top: 1rem; font-size: 13px; }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      padding: 8px 20px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      border-right: 1px solid var(--border);
+      transition: color 0.15s, background 0.15s;
+    }
+    .social-links a:last-child { border-right: none; }
+    .social-links a:hover { color: var(--green); background: var(--bg2); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-bright); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--green-dim); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <span class="prompt">paul@rpi:~$</span>
+    <a href="#hero">home</a>
+    <a href="#about">about</a>
+    <a href="#education">education</a>
+    <a href="#research">research</a>
+    <a href="mailto:paulrleaa04@gmx.us">contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="ascii-art">
+     ____            _   _
+    |  _ \ __ _ _  _| | | |    ___  __ _
+    | |_) / _` | || | | | |   / _ \/ _` |
+    |  __/ (_| | || | | |_____|  __/ (_| |
+    |_|   \__,_|\__,_|_|______\___|\__,_|
+    </div>
+
+    <h1 class="hero-title">Paul Lea<span class="cursor"></span></h1>
+    <p class="hero-subtitle">
+      <span class="tag">[</span> Physics &amp; Economics · RPI <span class="tag">]</span>
+      &nbsp;&nbsp;→&nbsp;&nbsp;
+      <span class="tag">[</span> Spectroscopy Research · Chi Phi TAA <span class="tag">]</span>
+    </p>
+
+    <div class="btn-group">
+      <a href="#about" class="btn">About Me</a>
+      <a href="paulLeaResume.pdf" class="btn dim">Resume.pdf</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">section_01</div>
+    <div class="spotlight">
+      <div class="text-col">
+        <h2>About Me</h2>
+        <div class="term-box">
+          <div class="body">
+            <p>My name is Paul Lea, and I'm originally from Dallas, TX. I study Physics and Economics. When I'm not studying, I enjoy learning about various topics, backpacking, coffee, and working on my car.</p>
+            <a href="/pubnotes/" class="btn dim" style="margin-top:0.5rem;">Learn More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="images/spotlight01.jpg" alt="Paul Lea" />
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-label">section_02</div>
+    <div class="spotlight flip">
+      <div class="text-col">
+        <h2>Education</h2>
+        <div class="term-box">
+          <div class="body">
+            <p>I studied Physics and Economics at Rensselaer Polytechnic Institute in Upstate NY. In the spring of 2025, I studied at University College London in the United Kingdom. Now, I'm working towards my master's back at RPI.</p>
+            <p>I enjoy teaching physics concepts at an approachable level — one of my ongoing projects is a free collection of notes covering various physics courses.</p>
+            <a href="/pubnotes/Notes/Physics-Hub" class="btn dim" style="margin-top:0.5rem;">My Notes →</a>
+          </div>
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="images/spotlight02.jpg" alt="Education" />
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">section_03</div>
+    <div class="spotlight">
+      <div class="text-col">
+        <h2>Research</h2>
+        <div class="term-box">
+          <div class="body">
+            <p>I'm actively engaged in research in higher education through my masters degree, as well as an upcoming SULI appointment at ANL. My background is primarily in experimental optical physics, molecular spectroscopy, and accelerator sciences.</p>
+            <a href="paulLeaResume.pdf" class="btn dim" style="margin-top:0.5rem;">My Experience →</a>
+          </div>
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="images/spotlight03.jpg" alt="Research" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <nav class="social-links">
+      <a href="https://www.facebook.com/paulrleaa04">facebook</a>
+      <a href="https://www.instagram.com/paulrleaa04/">instagram</a>
+      <a href="https://www.linkedin.com/in/paul-lea-58624a241/">linkedin</a>
+      <a href="mailto:paulrleaa04@gmx.us">email</a>
+    </nav>
+    <p class="footer-copy">© Paul Lea — Design inspired by <a href="https://richardapps.net" style="color:var(--text-dim);text-decoration:none;">richardapps.net</a></p>
+  </footer>
+
+</body>
 </html>
