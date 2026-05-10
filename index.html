@@ -76,15 +76,25 @@
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 2rem 4rem;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+
+    /* NEW */
+    background-image:
+      linear-gradient(rgba(10,14,10,0.78), rgba(10,14,10,0.88)),
+      url('images/image.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 
     #hero::after {
       content: '';
@@ -374,7 +384,7 @@
       <a href="https://www.linkedin.com/in/paul-lea-58624a241/">linkedin</a>
       <a href="mailto:paulrleaa04@gmx.us">email</a>
     </nav>
-    <p class="footer-copy">© Paul Lea — Design inspired by <a href="https://richardapps.net" style="color:var(--text-dim);text-decoration:none;">richardapps.net</a></p>
+    <p class="footer-copy">© Paul Lea — Design inspired by <a href="https://richardapps.net" style="color:var(--text-dim);text-decoration:none;">richardapps.net.</a> Banner photo taken on my <a href="https://paulsphysicsnotes.com/pubnotes/Blog/Photography/Pentax-IST-DL" style="color:var(--text-dim);text-decoration:none;"> camera</a></p>
   </footer>
 
 </body>
